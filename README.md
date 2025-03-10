@@ -7,5 +7,5 @@ Project will be written in python and will have database like **PostgreSQL**. De
 - Logged users can see displayed current balance
 
 ### Testing
-- - Unittests for all the necessary classes and functions: **authentication** and **financial calculations**
+- Unittests for all the necessary classes and functions: **authentication** and **financial calculations**
 
