@@ -16,6 +16,9 @@ class Maksukortti:
         if self.saldo >= MAUKAS:
             self.saldo -= MAUKAS
 
+    def saldo_euroina(self):
+        return self.saldo / 100
+
     def lataa_rahaa(self, maara):
         if maara < 0:
             return
