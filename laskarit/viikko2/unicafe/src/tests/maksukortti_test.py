@@ -41,3 +41,6 @@ class TestMaksukortti(unittest.TestCase):
         saldoa_kortissa_2 = kortti_2.ota_rahaa(1000)
         self.assertEqual(saldoa_kortissa_2, True)
 
+    def test_maksukortin_tulostus_antaa_oikean_merkkijonoesityksen(self):
+        merkkijonoesitys = self.maksukortti.__str__()
+        self.assertEqual(merkkijonoesitys, "Kortilla on rahaa 10.00 euroa")
