@@ -28,9 +28,12 @@ class TestKassapaate(unittest.TestCase):
     
     def test_jos_kateismaksu_ei_riittava_saldo_ei_muutu_rahat_takaisin_lounaiden_maara_sama(self):
         vaihtoraha = self.kassapaate.syo_edullisesti_kateisella(200)
+        vaihtoraha2 = self.kassapaate.syo_maukkaasti_kateisella(300)
         kassan_saldo = self.kassapaate.kassassa_rahaa_euroina()
         lounaita = self.kassapaate.edulliset + self.kassapaate.maukkaat
+
         self.assertEqual(vaihtoraha, 2.0)
+        self.assertEqual(vaihtoraha2, 3.0)
         self.assertEqual(kassan_saldo, 1000)
         self.assertEqual(lounaita, 0)
     
@@ -59,7 +62,6 @@ class TestKassapaate(unittest.TestCase):
         self.assertEqual(maksu2_onnistui, False)
         self.assertEqual(lounaita_yhteensa, 0)
         self.assertEqual(kortin_saldo, 1)
-    
     def test_kassan_saldo_ei_muutu_kortilla_ostettaessa(self):
         self.kassapaate.syo_edullisesti_kortilla(self.maksukortti)
         kassan_saldo = self.kassapaate.kassassa_rahaa_euroina()
@@ -74,3 +76,10 @@ class TestKassapaate(unittest.TestCase):
         self.assertEqual(kortin_uusi_saldo, 101)
         self.assertEqual(kassan_uusi_saldo, 1001)
 
+    def test_ladattaessa_negatiivista_saldoa_kortille_kortin_ja_kassan_saldo_ei_muutu(self):
+        self.kassapaate.lataa_rahaa_kortille(self.maksukortti, -300)
+        kortin_saldo = self.maksukortti.saldo_euroina()
+        kassan_saldo = self.kassapaate.kassassa_rahaa_euroina()
+        
+        self.assertEqual(kortin_saldo, 100)
+        self.assertEqual(kassan_saldo, 1000)
