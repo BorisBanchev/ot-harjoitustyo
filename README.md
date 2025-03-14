@@ -10,3 +10,4 @@ Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä 
 ### Dokumentaatio
 
 - [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+- [työaikakirjanpito](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
