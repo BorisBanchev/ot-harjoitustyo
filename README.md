@@ -1,12 +1,12 @@
 # Ohjelmistotekniikka, Harjoitustyö
 
-Link to the exercises folder is [here](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)
+Likki laskareiden kansioon [tässä](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)
 
 ## Budget managing App
 
-Project will be written in python and will have database like **PostgreSQL**. Dependancy management will be done with **Poetry**.
-Users can manage their daily expenses and see them when logged in the application.
+Projekti kirjoitetaan python-kielellä ja se tulee käyttämään tietokantana **PostgreSQL**. Riippuvuuksien hallintana käytetään **Poetryä**.
+Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä kulujaan.
 
 ### Dokumentaatio
 
-- [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/dokumentaatio/vaatimusmaarittely)
+- [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
