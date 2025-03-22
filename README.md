@@ -1,6 +1,6 @@
 # *Ohjelmistotekniikka, Harjoitustyö*
 
-*Likki laskareiden kansioon [tässä](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)*
+*Linkki laskareiden kansioon [tässä](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)*
 
 ## *Budget managing App*
 
