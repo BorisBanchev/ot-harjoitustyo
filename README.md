@@ -1,13 +1,13 @@
-# *Ohjelmistotekniikka, Harjoitustyö*
+# Ohjelmistotekniikka, Harjoitustyö
 
-*Linkki laskareiden kansioon [tässä](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)*
+Linkki laskareiden kansioon [tässä](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)
 
-## *Budget managing App*
+## Budget managing App
 
-*Projekti kirjoitetaan python-kielellä ja se tulee käyttämään tietokantana **SQLite**. Riippuvuuksien hallintana käytetään **Poetryä**.
-Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä kulujaan.*
+Projekti kirjoitetaan python-kielellä ja se tulee käyttämään *tietokantana* **SQLite**. Riippuvuuksien hallintana käytetään **Poetryä**.
+Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä kulujaan.
 
-### *Dokumentaatio*
+### Dokumentaatio
 
-- *[vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)*
-- *[työaikakirjanpito](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)*
+- [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+- [työaikakirjanpito](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
