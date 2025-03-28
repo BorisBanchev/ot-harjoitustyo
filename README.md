@@ -4,7 +4,7 @@
 
 ## *Budget managing App*
 
-*Projekti kirjoitetaan python-kielellä ja se tulee käyttämään tietokantana **PostgreSQL**. Riippuvuuksien hallintana käytetään **Poetryä**.
+*Projekti kirjoitetaan python-kielellä ja se tulee käyttämään tietokantana **SQLite**. Riippuvuuksien hallintana käytetään **Poetryä**.
 Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä kulujaan.*
 
 ### *Dokumentaatio*
