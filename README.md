@@ -9,5 +9,6 @@ Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä 
 
 ### Dokumentaatio
 
-- [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
-- [työaikakirjanpito](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+- [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/vaatimusmaarittely.md)
+- [työaikakirjanpito](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/tyoaikakirjanpito.md)
+- [changelog](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/changelog.md)
