@@ -1,0 +1,11 @@
+.env
+__pycache__
+.pytest_cache
+.vscode
+.DS_Store
+.coverage
+htmlcov
+*.py[cod]
+*$py.class
+data/database.sqlite
+data/test-database.sqlite
