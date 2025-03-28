@@ -1,7 +1,5 @@
 # Ohjelmistotekniikka, Harjoitustyö
 
-Linkki laskareiden kansioon [tässä](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/laskarit)
-
 ## Budget managing App
 
 Projekti kirjoitetaan python-kielellä ja se tulee käyttämään *tietokantana* **SQLite**. Riippuvuuksien hallintana käytetään **Poetryä**.
