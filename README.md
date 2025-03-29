@@ -13,6 +13,26 @@ Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä 
 
 ## Asennus
 
+**Huom!** Kloonaa ensin repositorio koneellesi:
+
+```bash
+git clone
+```
+
+Navigoi hakemistoon _budget-management-app_:
+
+```bash
+cd budget-management-app
+```
+
+Luo .env - tiedosto projektin juureen seuraavalla sisällöllä:
+
+```bash
+DATABASE_FILENAME=<tietokanta-tiedoston-nimi> # esim. database.sqlite
+```
+
+Tämän jälkeen suorita seuraavat asiat:
+
 1. Asenna riippuvuudet:
 
 ```bash
