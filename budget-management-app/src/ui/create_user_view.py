@@ -5,7 +5,6 @@ class CreateUserView:
     def __init__(self, root, budget_service, handle_create_user):
         self._root = root
         self._handle_create_user = handle_create_user
-        # self._handle_show_login_view = handle_show_login_view
         self._budget_service = budget_service
         self._frame = None
         self._username_entry = None
@@ -100,16 +99,10 @@ class CreateUserView:
             command=self._create_user_handler
         )
 
-        # login_button = ttk.Button(
-        #     master=self._frame,
-        #     text="Login",
-        #     command=self._handle_show_login_view
-        # )
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
-        # login_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self._hide_error()
         self._hide_success()
