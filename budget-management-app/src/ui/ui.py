@@ -3,6 +3,7 @@ from services.user_service import user_service
 from ui.expenses_view import ExpensesView
 from ui.login_view import LoginView
 
+
 class UI:
     def __init__(self, root):
         self._root = root
@@ -32,14 +33,14 @@ class UI:
         self._hide_current_view()
 
         self._current_view = CreateUserView(
-            self._root, user_service, handle_create_user = self._handle_create_user
+            self._root, user_service, handle_create_user=self._handle_create_user
         )
 
         self._current_view.pack()
 
     def _show_expenses_view(self):
         self._hide_current_view()
-        
+
         self._current_view = ExpensesView(self._root)
         self._current_view.pack()
 
@@ -50,7 +51,6 @@ class UI:
         except Exception as e:
             if self._current_view and isinstance(self._current_view, LoginView):
                 self._current_view._show_error(str(e))
-    
 
     def _handle_create_user(self):
         self._show_expenses_view()

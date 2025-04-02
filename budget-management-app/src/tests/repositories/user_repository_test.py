@@ -2,12 +2,13 @@ import unittest
 from entities.user import User
 from repositories.user_repository import user_repository
 
+
 class TestUserRepository(unittest.TestCase):
     def setUp(self):
         user_repository.delete_all_users()
-        self.user_paavo = User("paavo","1234")
-        self.user_ville = User("ville","1234")
-    
+        self.user_paavo = User("paavo", "1234")
+        self.user_ville = User("ville", "1234")
+
     def test_create(self):
         user_repository.create_user(self.user_paavo)
         users = user_repository.get_all_users()

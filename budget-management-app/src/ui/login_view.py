@@ -1,5 +1,6 @@
 from tkinter import ttk, constants, StringVar
 
+
 class LoginView:
     def __init__(self, root, handle_login, handle_show_create_user):
         self._root = root
@@ -12,13 +13,13 @@ class LoginView:
         self._error_label = None
 
         self._initialize()
-    
+
     def pack(self):
         self._frame.pack(fill=constants.BOTH, expand=True)
-    
+
     def destroy(self):
         self._frame.destroy()
-    
+
     def _initialize_username_field(self):
         username_label = ttk.Label(master=self._frame, text="Username")
         self._username_entry = ttk.Entry(master=self._frame)
@@ -30,7 +31,7 @@ class LoginView:
         self._password_entry = ttk.Entry(master=self._frame, show="*")
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
-    
+
     def _handle_login_click(self):
         username = self._username_entry.get()
         password = self._password_entry.get()

@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar, constants
 from services.user_service import user_service, UsernameExistsError, PasswordsNotMatchingError, InvalidPasswordOrUsernameError, EmptyUsernameOrPasswordError
 
+
 class CreateUserView:
     def __init__(self, root, user_service, handle_create_user):
         self._root = root
@@ -30,7 +31,7 @@ class CreateUserView:
         try:
             user_service.create_user(username, password, confirm_password)
             self._handle_create_user()
-            
+
         except EmptyUsernameOrPasswordError:
             self._show_error("Username and password must not be empty values")
         except UsernameExistsError:
@@ -38,17 +39,15 @@ class CreateUserView:
         except PasswordsNotMatchingError:
             self._show_error("Passwords do not match")
         except InvalidPasswordOrUsernameError:
-            self._show_error("Password and username must have a length of at least 4")
-        
+            self._show_error(
+                "Password and username must have a length of at least 4")
 
     def _show_error(self, message):
         self._error_variable.set(message)
         self._error_label.grid()
-    
 
     def _hide_error(self):
         self._error_label.grid_remove()
-
 
     def _initialize_username_field(self):
         username_label = ttk.Label(master=self._frame, text="Username")
@@ -65,15 +64,15 @@ class CreateUserView:
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
         # confirm_password label and entry
-        confirm_password_label = ttk.Label(master=self._frame, text="Confirm Password")
+        confirm_password_label = ttk.Label(
+            master=self._frame, text="Confirm Password")
         self._confirm_password_entry = ttk.Entry(master=self._frame, show="*")
         confirm_password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._confirm_password_entry.grid(padx=5, pady=5, sticky=constants.EW)
 
-
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        
+
         self._error_variable = StringVar(self._frame)
 
         self._error_label = ttk.Label(
@@ -93,10 +92,8 @@ class CreateUserView:
             command=self._create_user_handler
         )
 
-
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
 
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self._hide_error()
-
