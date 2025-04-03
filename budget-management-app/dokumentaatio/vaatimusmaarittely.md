@@ -2,9 +2,9 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus on budjetin hallinnointi järjestelmä, jossa käyttäjät voivat kirjautua sovellukseen ja seurata omia päivittäisiä kulujaan. Käyttäjä voi luoda uusia kuluja,
+Sovellus on budjetin hallinnointi järjestelmä, jossa käyttäjät voivat kirjautua sovellukseen ja seurata omia päivittäisiä kulujaan sen hetkisenä kuukautena. Käyttäjä voi luoda uusia kuluja,
 jotka tallennetaan tietokantaan, muodossa (kulun id, kulun/ostoksen nimi, kulun summa, kulun päivämäärä). Käyttäjä voi asettaa itselleen oman budjetin.
-Oman budjetin tilanne päivittyy listattujen kulujen myötä eli voidaan klikata current budget, joka vähentää budjetista sen hetkiset kulut.
+Oman budjetin tilanne päivittyy, jos kuluja muokataan tai poistetaan.
 
 ## Käyttäjät
 
@@ -14,17 +14,17 @@ Sovelluksessa on käytössä vain yksi käyttäjärooli eli ei ole admin käytt�
 
 ### Ennen kirjautumista
 
-- Käyttäjä voi luoda itselleen käyttäjätunnuksen, joka on uniikki ja pituudeltaan vähintään 4 merkkiä
+- Käyttäjä voi luoda itselleen käyttäjätunnuksen, joka on uniikki ja pituudeltaan vähintään 4 merkkiä (salasanan oltava vähintään 4 merkkiä)
 - Käyttäjä voi kirjautua sovellukseen omalla tunnuksellaan
   - Kirjautuminen onnistuu kirjoittamalla voimassa oleva käyttäjätunnus ja oikea salasana kirjautumislomakkeeseen
   - Virheellisen käyttäjätunnuksen tai salasanan antamisesta järjestelmä antaa sopivan virheviestin
 
 ### Kirjautuneena
 
-- Käyttäjä näkee oman budjettinsa sekä tietokannassa olevat kulut
-- Käyttäjä voi luoda uuden kulun ja nähdä omat kulunsa
-- Käyttäjä voi muokata kulua klikkaamalla tätä ja nappia update, jolloin budjetti päivittyy
-- Käyttäjä voi poistaa omia kulujaan, jolloin budjetti päivittyy
+- Käyttäjä voi asettaa itselleen kuukauden budjetin
+- Käyttäjä voi luoda uuden kulun lomakkeelta täyttämällä tiedot ja painamalla nappia "add expense"
+- Käyttäjä voi mennä kulujen näkymään painamalla nappia "show expenses"
+- Käyttäjä voi poistaa omia kulujaan painamalla nappia "Delete Expense", muokata niitä klikkaamalla haluttua kulua ja painamalla "Update Expense". Budjetti päivittyy näiden yhteydessä
 - Käyttäjä voi kirjautua ulos sovelluksesta
 
 ## Jatkokehitysideoita
