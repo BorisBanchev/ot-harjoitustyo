@@ -1,6 +1,7 @@
 import bcrypt
 from entities.user import User
 from repositories.user_repository import user_repository
+from repositories.expense_repository import expense_repository
 
 
 class UsernameExistsError(Exception):
@@ -27,6 +28,24 @@ class UserService:
     def __init__(self, user_repository):
         self._user = None
         self._user_repository = user_repository
+
+    def set_budget(self, username, budget):
+        try:
+            monthly_budget = int(budget)
+            if monthly_budget <= 0:
+                raise ValueError("Budget must be a positive number!")
+        except ValueError:
+            raise ValueError("Budget must be a valid number!")
+        
+        user_repository.update_budget(username, monthly_budget)
+        self._user.monthly_budget = monthly_budget
+    
+    def get_current_budget(self):
+        if self._user.monthly_budget is None:
+            return None
+        expenses = expense_repository.get_expenses_by_user(self._user.username)
+        total_expenses = sum(expense.amount for expense in expenses)
+        return self._user.monthly_budget - total_expenses
 
     def create_user(self, username: str, password: str, password_confirm: str):
 

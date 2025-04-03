@@ -12,7 +12,7 @@ class UserRepository:
         cursor.execute("SELECT * FROM users")
         rows = cursor.fetchall()
 
-        return [User(row["username"], row["password"], row["budget"]) for row in rows]
+        return [User(row["username"], row["password"], row["monthly_budget"]) for row in rows]
 
     def get_user_by_name(self, username: str):
         cursor = self._db.cursor()
@@ -20,7 +20,7 @@ class UserRepository:
         row = cursor.fetchone()
 
         if row:
-            return User(row["username"], row["password"], row["budget"])
+            return User(row["username"], row["password"], row["monthly_budget"])
         return None
 
     def create_user(self, user: User):
@@ -37,6 +37,16 @@ class UserRepository:
     def delete_all_users(self):
         cursor = self._db.cursor()
         cursor.execute("DELETE FROM users")
+        self._db.commit()
+    
+    def update_budget(self, username, budget):
+        monthly_budget = budget
+        cursor = self._db.cursor()
+        cursor.execute('''
+            UPDATE users
+            SET monthly_budget = ?
+            WHERE username = ?
+        ''', (monthly_budget, username))
         self._db.commit()
 
 

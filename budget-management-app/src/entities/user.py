@@ -1,6 +1,6 @@
 class User:
-    def __init__(self, username: str, password: str, budget: int = None, id: int = None):
+    def __init__(self, username: str, password: str, monthly_budget: int = None, id: int = None):
         self.username = username
         self.password = password
-        self.budget = budget
+        self.monthly_budget = monthly_budget
         self.id = id
