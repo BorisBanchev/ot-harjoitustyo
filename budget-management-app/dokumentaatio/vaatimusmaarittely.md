@@ -14,17 +14,18 @@ Sovelluksessa on käytössä vain yksi käyttäjärooli eli ei ole admin käytt�
 
 ### Ennen kirjautumista
 
-- Käyttäjä voi luoda itselleen käyttäjätunnuksen, joka on uniikki ja pituudeltaan vähintään 4 merkkiä (salasanan oltava vähintään 4 merkkiä)
-- Käyttäjä voi kirjautua sovellukseen omalla tunnuksellaan
-  - Kirjautuminen onnistuu kirjoittamalla voimassa oleva käyttäjätunnus ja oikea salasana kirjautumislomakkeeseen
-  - Virheellisen käyttäjätunnuksen tai salasanan antamisesta järjestelmä antaa sopivan virheviestin
+- Käyttäjä voi luoda itselleen käyttäjätunnuksen, joka on uniikki ja pituudeltaan vähintään 4 merkkiä (salasanan oltava vähintään 4 merkkiä) **"Tehty"**
+- Käyttäjä voi kirjautua sovellukseen omalla tunnuksellaan **"Tehty"**
+  - Kirjautuminen onnistuu kirjoittamalla voimassa oleva käyttäjätunnus ja oikea salasana kirjautumislomakkeeseen **"Tehty"**
+  - Virheellisen käyttäjätunnuksen tai salasanan antamisesta järjestelmä antaa sopivan virheviestin **"Tehty"**
 
 ### Kirjautuneena
 
-- Käyttäjä voi asettaa itselleen kuukauden budjetin
-- Käyttäjä voi luoda uuden kulun lomakkeelta täyttämällä tiedot ja painamalla nappia "add expense"
-- Käyttäjä voi mennä kulujen näkymään painamalla nappia "show expenses"
-- Käyttäjä voi poistaa omia kulujaan painamalla nappia "Delete Expense", muokata niitä klikkaamalla haluttua kulua ja painamalla "Update Expense". Budjetti päivittyy näiden yhteydessä
+- Käyttäjä voi asettaa itselleen kuukauden budjetin **"Tehty"**
+- Käyttäjä voi luoda uuden kulun lomakkeelta täyttämällä tiedot ja painamalla nappia "add expense" **"Tehty"**
+- Käyttäjä voi mennä kulujen näkymään painamalla nappia "show expenses" **"Tehty"**
+- Käyttäjä voi poistaa omia kulujaan painamalla nappia "Delete Expense" **"Tehty"**, muokata niitä klikkaamalla haluttua kulua ja painamalla "Update Expense"
+- Budjetti päivittyy muutosten yhteydessä **"Tehty"**
 - Käyttäjä voi kirjautua ulos sovelluksesta
 
 ## Jatkokehitysideoita
