@@ -57,7 +57,8 @@ class AddExpenseView:
     def _refresh_message(self):
         if user_service._user.monthly_budget is None:
             self._message_label.config(text=f"Hey {user_service._user.username}, set a budget!")
-        self._message_label.config(text=f"Hey {user_service._user.username}, add an expense!")
+        else:
+            self._message_label.config(text=f"Hey {user_service._user.username}, add an expense!")
 
     def _clear_form(self):
         self._expense_description_entry.delete(0, constants.END)
