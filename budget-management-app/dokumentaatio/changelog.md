@@ -12,3 +12,8 @@
 - Käyttäjä näkee aloitussivulla kirjautumislomakkeen, voi valita myös uuden käyttäjän luomisen, jos ei ole käyttäjää
 - Vaihdettu BudgetService-luokka UserService luokaksi, joka vastaa käyttäjiin liittyvästä sovelluslogiikasta
 - Käyttäjä ohjataan omien kulujen alustavaan näkymään onnistuvan kirjautumisen tai uuden käyttäjän luomisen yhteydessä.
+- Tietokantaan lisätty expenses taulu tallentamaan käyttäjän kuluja
+- Lisätty Expense-luokka, joka kuvaa käyttäjän tietokannassa olevia yksittäisiä kuluja
+- Lisätty ExpenseRepository-luokka, joka huolehtii käyttäjän kuluihin liittyvistä tietokantaoperaatioista
+- Lisätty ExpenseService-luokka, joka huolehtii kulun validaatiosta ja kutsuu ExpenseRepository luokkaa luodessa uuden kulun
+- Lisätty add_expense_view ja show_expenses_view näkymät huolehtimaan käyttöliittymästä kulujen näyttämiseen ja luomiseen
