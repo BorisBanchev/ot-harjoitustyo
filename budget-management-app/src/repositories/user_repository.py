@@ -38,7 +38,7 @@ class UserRepository:
         cursor = self._db.cursor()
         cursor.execute("DELETE FROM users")
         self._db.commit()
-    
+
     def update_budget(self, username, budget):
         monthly_budget = budget
         cursor = self._db.cursor()

@@ -5,6 +5,7 @@ from ui.login_view import LoginView
 from services.expense_service import expense_service
 from ui.show_expenses_view import ShowExpensesView
 
+
 class UI:
     def __init__(self, root):
         self._root = root
@@ -45,10 +46,10 @@ class UI:
         self._current_view = AddExpenseView(
             self._root,
             handle_expense_adding=self._handle_add_expense,
-            handle_show_expenses=self._show_expenses_view                   
+            handle_show_expenses=self._show_expenses_view
         )
         self._current_view.pack()
-    
+
     def _show_expenses_view(self):
         self._hide_current_view()
 
@@ -71,7 +72,8 @@ class UI:
 
     def _handle_add_expense(self, description, amount, date):
         try:
-            expense_service.add_expense(description, amount, date, user_service._user.username)
+            expense_service.add_expense(
+                description, amount, date, user_service._user.username)
         except Exception as e:
             if self._current_view and isinstance(self._current_view, AddExpenseView):
                 self._current_view._show_error(str(e))

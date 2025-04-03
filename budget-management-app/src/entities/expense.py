@@ -4,4 +4,3 @@ class Expense:
         self.description = description
         self.amount = amount
         self.date = date
-    
