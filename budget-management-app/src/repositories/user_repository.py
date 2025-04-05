@@ -1,6 +1,6 @@
+import bcrypt
 from entities.user import User
 from db.database_connection import get_database_connection
-import bcrypt
 
 
 class UserRepository:

@@ -28,7 +28,7 @@ class ExpenseRepository:
             DELETE FROM expenses WHERE id = ?
         ''', (expense_id, ))
         self._db.commit()
-    
+
     def delete_all_expenses(self):
         cursor = self._db.cursor()
         cursor.execute("DELETE FROM expenses")

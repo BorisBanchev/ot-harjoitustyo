@@ -1,4 +1,3 @@
-from datetime import datetime
 from entities.expense import Expense
 from repositories.expense_repository import expense_repository
 

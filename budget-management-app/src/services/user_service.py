@@ -34,11 +34,11 @@ class UserService:
             monthly_budget = int(budget)
         except ValueError:
             raise ValueError("Budget must be a valid number!")
-        
+
         if monthly_budget <= 0:
-                raise ValueError("Budget must be a positive number!")
-        
-        user_repository.update_budget(username, monthly_budget)
+            raise ValueError("Budget must be a positive number!")
+
+        self._user_repository.update_budget(username, monthly_budget)
         self._user.monthly_budget = monthly_budget
 
     def get_current_budget(self):

@@ -1,6 +1,5 @@
 from tkinter import Tk
 from ui.ui import UI
-from repositories.user_repository import user_repository
 
 
 def main():

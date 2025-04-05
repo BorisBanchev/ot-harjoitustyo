@@ -38,10 +38,7 @@ class TestUserRepository(unittest.TestCase):
         user_repository.create_user(self.user_paavo)
         user_by_name = user_repository.get_user_by_name("paavo")
         self.assertEqual(user_by_name.monthly_budget, None)
-        
+
         user_repository.update_budget("paavo", 3000)
         updated_user_with_budget = user_repository.get_user_by_name("paavo")
         self.assertEqual(updated_user_with_budget.monthly_budget, 3000)
-        
-
-
