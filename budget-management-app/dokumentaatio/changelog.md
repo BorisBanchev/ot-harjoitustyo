@@ -17,3 +17,4 @@
 - Lisätty ExpenseRepository-luokka, joka huolehtii käyttäjän kuluihin liittyvistä tietokantaoperaatioista
 - Lisätty ExpenseService-luokka, joka huolehtii kulun validaatiosta ja kutsuu ExpenseRepository luokkaa luodessa uuden kulun
 - Lisätty add_expense_view ja show_expenses_view näkymät huolehtimaan käyttöliittymästä kulujen näyttämiseen ja luomiseen
+- Lisätty testejä luokille ExpenseRepository sekä UserService
