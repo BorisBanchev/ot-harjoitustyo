@@ -35,7 +35,7 @@ class TestExpenseRepository(unittest.TestCase):
         expenses_by_user = expense_repository.get_expenses_by_user(username)
         self.assertEqual(len(expenses_by_user), 1)
 
-        expense_repository.delete_expense(expenses_by_user[0].id)
+        expense_repository.delete_expense(expenses_by_user[0].expense_id)
         expenses_by_user_after = expense_repository.get_expenses_by_user(
             username)
         self.assertEqual(len(expenses_by_user_after), 0)
