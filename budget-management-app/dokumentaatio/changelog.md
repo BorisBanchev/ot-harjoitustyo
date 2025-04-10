@@ -18,3 +18,7 @@
 - Lisätty ExpenseService-luokka, joka huolehtii kulun validaatiosta ja kutsuu ExpenseRepository luokkaa luodessa uuden kulun
 - Lisätty add_expense_view ja show_expenses_view näkymät huolehtimaan käyttöliittymästä kulujen näyttämiseen ja luomiseen
 - Lisätty testejä luokille ExpenseRepository sekä UserService
+
+## Viikko 5
+
+- Käyttäjä voi kirjautua ulos sovelluksesta add_expense ja show_expenses sivuilta painamalla nappia **Logout**
