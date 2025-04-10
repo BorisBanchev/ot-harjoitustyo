@@ -71,9 +71,4 @@ class UI:
         self._show_add_expense_view()
 
     def _handle_add_expense(self, description, amount, date):
-        try:
-            expense_service.add_expense(
-                description, amount, date, user_service._user.username)
-        except Exception as e:
-            if self._current_view and isinstance(self._current_view, AddExpenseView):
-                self._current_view._show_error(str(e))
+        expense_service.add_expense(description, amount, date, user_service._user.username)

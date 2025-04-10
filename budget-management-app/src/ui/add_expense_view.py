@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from services.user_service import user_service
 from repositories.expense_repository import expense_repository
 from entities.expense import Expense
-
+from services.expense_service import InvalidExpenseError
 
 class AddExpenseView:
     def __init__(self, root, handle_expense_adding, handle_show_expenses):
@@ -52,8 +52,10 @@ class AddExpenseView:
             self._handle_expense_adding(description, amount, date)
             self._show_success("Expense added successfully!")
             self._clear_form()
-        except Exception as e:
+        except InvalidExpenseError as e:
             self._show_error(str(e))
+        except Exception as e:
+            self._show_error("An unexpected error occured!")
 
     def _refresh_message(self):
         if user_service._user.monthly_budget is None:
@@ -70,6 +72,7 @@ class AddExpenseView:
 
     def _show_error(self, message):
         self._error_variable.set(message)
+        self._error_label.config(foreground="red")
         self._error_label.grid()
 
     def _show_success(self, message):
