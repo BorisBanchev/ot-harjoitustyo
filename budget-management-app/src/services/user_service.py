@@ -76,5 +76,7 @@ class UserService:
         self._user = user
         return user
 
+    def logout(self):
+        self._user = None
 
 user_service = UserService(user_repository)

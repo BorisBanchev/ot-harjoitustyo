@@ -4,10 +4,11 @@ from services.user_service import user_service
 
 
 class ShowExpensesView:
-    def __init__(self, root, handle_add_expense):
+    def __init__(self, root, handle_add_expense, handle_logout):
         self._root = root
         self._frame = ttk.Frame(master=self._root)
         self._handle_add_expense = handle_add_expense
+        self._handle_logout = handle_logout
         self._selected_expense_id = None
         self._budget_label = None
         self._initialize()
@@ -92,5 +93,12 @@ class ShowExpensesView:
         )
         add_expense_button.grid(row=2, column=2, padx=5,
                                 pady=5, sticky=constants.EW)
+
+        logout_button = ttk.Button(
+            master=self._frame,
+            text="Logout",
+            command=self._handle_logout
+        )
+        logout_button.grid(row=3, column=0, padx=5, pady=5, sticky=constants.EW)
 
         self._refresh_expenses()

@@ -46,7 +46,8 @@ class UI:
         self._current_view = AddExpenseView(
             self._root,
             handle_expense_adding=self._handle_add_expense,
-            handle_show_expenses=self._show_expenses_view
+            handle_show_expenses=self._show_expenses_view,
+            handle_logout=self._handle_logout
         )
         self._current_view.pack()
 
@@ -55,9 +56,14 @@ class UI:
 
         self._current_view = ShowExpensesView(
             self._root,
-            handle_add_expense=self._show_add_expense_view
+            handle_add_expense=self._show_add_expense_view,
+            handle_logout=self._handle_logout
         )
         self._current_view.pack()
+
+    def _handle_logout(self):
+        user_service.logout()
+        self._show_login_view()
 
     def _handle_login(self, username, password):
         try:
