@@ -49,7 +49,7 @@ class ShowExpensesView:
             user_service._user.username)
         for expense in expenses:
             self._tree.insert("", "end", values=(
-                expense.id, expense.description, expense.amount, expense.date))
+                expense.expense_id, expense.description, expense.amount, expense.date))
 
         self._refresh_budget()
 
