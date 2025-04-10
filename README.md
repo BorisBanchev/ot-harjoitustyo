@@ -79,3 +79,10 @@ poetry run invoke coverage-report
 ```
 
 Raportti generoidaan htmlcov-hakemistoon
+
+### Pylint
+Ohjelman suorittamat koodin tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
