@@ -84,5 +84,5 @@ Raportti generoidaan htmlcov-hakemistoon
 Ohjelman suorittamat koodin tarkistukset voi suorittaa komennolla:
 
 ```bash
-poetry run invoke lint
+poetry run invoke pylint
 ```
