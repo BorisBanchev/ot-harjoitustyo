@@ -77,7 +77,8 @@ class UI:
 
     def _handle_update_expense(self, expense_id, description, amount, date):
         try:
-            expense_service.update_expense(expense_id, description, amount, date)
+            expense_service.update_expense(
+                expense_id, description, amount, date)
             self._show_expenses_view()
         except Exception as e:
             if self._current_view and isinstance(self._current_view, UpdateExpenseView):
@@ -99,4 +100,5 @@ class UI:
         self._show_add_expense_view()
 
     def _handle_add_expense(self, description, amount, date):
-        expense_service.add_expense(description, amount, date, user_service._user.username)
+        expense_service.add_expense(
+            description, amount, date, user_service._user.username)

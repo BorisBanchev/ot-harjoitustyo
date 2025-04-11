@@ -9,4 +9,5 @@
 | 1.4.  |  4   | Käyttäjän kirjautumistoiminnallisuutta, UI sivujen muodostamista                   |
 | 3.4.  |  4   | Kulujen lisäämisen sekä näyttämisen näkymän työstämistä ja tämän logiikan toteutus |
 | 10.4. |  1   | Uloskirjautumisen toteutus                                                         |
-| yht.  | 17,5 |
+| 11.4. |  4   | Kulun muokkaustoiminnallisuuden toteutus                                           |
+| yht.  | 21,5 |

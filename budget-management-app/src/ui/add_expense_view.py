@@ -5,6 +5,7 @@ from repositories.expense_repository import expense_repository
 from entities.expense import Expense
 from services.expense_service import InvalidExpenseError
 
+
 class AddExpenseView:
     def __init__(self, root, handle_expense_adding, handle_show_expenses, handle_logout):
         self._root = root
@@ -170,7 +171,8 @@ class AddExpenseView:
             text="Logout",
             command=self._handle_logout
         )
-        logout_button.grid(row=8, column=0, padx=5, pady=5, sticky=constants.EW)
+        logout_button.grid(row=8, column=0, padx=5,
+                           pady=5, sticky=constants.EW)
 
         self._error_variable = StringVar(self._frame)
         self._error_label = ttk.Label(
@@ -180,7 +182,6 @@ class AddExpenseView:
         )
         self._error_label.grid(row=9, column=0, padx=5, pady=5)
         self._hide_error()
-        
+
         self._frame.grid_columnconfigure(0, weight=1)
         self._frame.grid_columnconfigure(1, weight=1)
-

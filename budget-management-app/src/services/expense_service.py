@@ -23,7 +23,7 @@ class ExpenseService:
 
         expense = Expense(description=description, amount=amount, date=date)
         self._expense_repository.create_expense(expense, username)
-    
+
     def update_expense(self, expense_id, description, amount, date):
         if not description or not amount or not date:
             raise InvalidExpenseError("All fields are required!")
@@ -35,7 +35,8 @@ class ExpenseService:
         except ValueError:
             raise InvalidExpenseError("Amount must be a valid number!")
 
-        expense_repository.update_expense(expense_id, description, amount, date)
+        expense_repository.update_expense(
+            expense_id, description, amount, date)
 
 
 expense_service = ExpenseService(expense_repository)

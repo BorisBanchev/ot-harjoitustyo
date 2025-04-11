@@ -21,4 +21,6 @@
 
 ## Viikko 5
 
-- Käyttäjä voi kirjautua ulos sovelluksesta add_expense ja show_expenses sivuilta painamalla nappia **Logout**
+- Käyttäjä voi kirjautua ulos sovelluksesta add_expense, update_expense ja show_expenses sivuilta painamalla nappia **Logout**
+- Lisätty näkymä update_expense_view, jossa käyttäjä voi muokata kulun kenttiä amount, description tai date
+- Käyttäjä voi scrollata kuluja taulukossa, jos niitä on paljon

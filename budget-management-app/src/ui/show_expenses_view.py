@@ -29,9 +29,11 @@ class ShowExpensesView:
         if not self._selected_expense_id:
             return
 
-        expenses = expense_repository.get_expenses_by_user(user_service._user.username)
+        expenses = expense_repository.get_expenses_by_user(
+            user_service._user.username)
         selected_expense = next(
-            (expense for expense in expenses if expense.expense_id == int(self._selected_expense_id)),
+            (expense for expense in expenses if expense.expense_id ==
+             int(self._selected_expense_id)),
             None
         )
         if selected_expense:
@@ -72,7 +74,8 @@ class ShowExpensesView:
 
     def _initialize_expenses_table(self):
         table_frame = ttk.Frame(master=self._frame)
-        table_frame.grid(row=1, column=0, columnspan=3, padx=5, pady=5, sticky=constants.EW)
+        table_frame.grid(row=1, column=0, columnspan=3,
+                         padx=5, pady=5, sticky=constants.EW)
 
         self._tree = ttk.Treeview(
             master=table_frame,
@@ -102,7 +105,7 @@ class ShowExpensesView:
     def _initialize(self):
         self._initialize_budget_field()
         self._initialize_expenses_table()
-        
+
         delete_button = ttk.Button(
             master=self._frame,
             text="Delete Expense",
@@ -118,20 +121,22 @@ class ShowExpensesView:
         )
         add_expense_button.grid(row=2, column=2, padx=5,
                                 pady=5, sticky=constants.EW)
-        
+
         update_button = ttk.Button(
             master=self._frame,
             text="Update Expense",
             command=self._update_expense_handler
         )
-        update_button.grid(row=2, column=1, padx=5, pady=5, sticky=constants.EW)
+        update_button.grid(row=2, column=1, padx=5,
+                           pady=5, sticky=constants.EW)
 
         logout_button = ttk.Button(
             master=self._frame,
             text="Logout",
             command=self._handle_logout
         )
-        logout_button.grid(row=3, column=0, padx=5, pady=5, sticky=constants.EW)
+        logout_button.grid(row=3, column=0, padx=5,
+                           pady=5, sticky=constants.EW)
 
         self._refresh_expenses()
 
