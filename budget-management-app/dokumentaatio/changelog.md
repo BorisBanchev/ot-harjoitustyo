@@ -24,3 +24,4 @@
 - Käyttäjä voi kirjautua ulos sovelluksesta add_expense, update_expense ja show_expenses sivuilta painamalla nappia **Logout**
 - Lisätty näkymä update_expense_view, jossa käyttäjä voi muokata kulun kenttiä amount, description tai date
 - Käyttäjä voi scrollata kuluja taulukossa, jos niitä on paljon
+- Testattu UserService luokan logout funktiota ja ExpenseRepositoryn update_expense funktiota
