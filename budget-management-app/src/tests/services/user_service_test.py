@@ -128,3 +128,13 @@ class TestUserService(unittest.TestCase):
         expense_repository.create_expense(self.expense, user.username)
 
         self.assertEqual(user_service.get_current_budget(), 2000)
+    
+    def test_logout_sets_user_service_user_to_none(self):
+        user_service.create_user(
+            self.valid_user.username, self.valid_user.password, self.valid_user.password)
+        user = user_service.login(
+            self.valid_user.username, self.valid_user.password)
+        self.assertIsNotNone(user_service._user)
+        user_service.logout()
+        self.assertIsNone(user_service._user)
+        
