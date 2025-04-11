@@ -18,8 +18,8 @@ class ExpenseService:
             amount = float(amount)
             if amount <= 0:
                 raise InvalidExpenseError("Amount must be greater than zero!")
-        except ValueError:
-            raise InvalidExpenseError("Amount must be a valid number!")
+        except ValueError as exc:
+            raise InvalidExpenseError("Amount must be a valid number!") from exc
 
         expense = Expense(description=description, amount=amount, date=date)
         self._expense_repository.create_expense(expense, username)
@@ -32,8 +32,8 @@ class ExpenseService:
             amount = float(amount)
             if amount <= 0:
                 raise InvalidExpenseError("Amount must be greater than zero!")
-        except ValueError:
-            raise InvalidExpenseError("Amount must be a valid number!")
+        except ValueError as exc:
+            raise InvalidExpenseError("Amount must be a valid number!") from exc
 
         expense_repository.update_expense(
             expense_id, description, amount, date)

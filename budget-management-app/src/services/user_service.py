@@ -25,15 +25,15 @@ class InvalidCredentialsError(Exception):
 
 
 class UserService:
-    def __init__(self, user_repository):
+    def __init__(self, repository):
         self._user = None
-        self._user_repository = user_repository
+        self._user_repository = repository
 
     def set_budget(self, username, budget):
         try:
             monthly_budget = int(budget)
-        except ValueError:
-            raise ValueError("Budget must be a valid number!")
+        except ValueError as exc:
+            raise ValueError("Budget must be a valid number!") from exc
 
         if monthly_budget <= 0:
             raise ValueError("Budget must be a positive number!")
