@@ -22,6 +22,15 @@ class ExpenseRepository:
         rows = cursor.fetchall()
         return [Expense(row["description"], row["amount"], row["date"], row["id"]) for row in rows]
 
+    def update_expense(self, expense_id, description, amount, date):
+        cursor = self._db.cursor()
+        cursor.execute('''
+            UPDATE expenses
+            SET description = ?, amount = ?, date = ?
+            WHERE id = ?
+        ''', (description, amount, date, expense_id))
+        self._db.commit()
+
     def delete_expense(self, expense_id: int):
         cursor = self._db.cursor()
         cursor.execute('''

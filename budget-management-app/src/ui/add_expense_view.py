@@ -87,7 +87,6 @@ class AddExpenseView:
     def _get_available_dates(self):
         # Generate a list of dates from current day to the end of the month
         today = datetime.now()
-        today = datetime.now()
         last_day_of_month = (today.replace(
             day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
         return [(today + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((last_day_of_month - today).days + 1)]

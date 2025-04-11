@@ -4,6 +4,7 @@ from ui.add_expense_view import AddExpenseView
 from ui.login_view import LoginView
 from services.expense_service import expense_service
 from ui.show_expenses_view import ShowExpensesView
+from ui.update_expense_view import UpdateExpenseView
 
 
 class UI:
@@ -57,9 +58,30 @@ class UI:
         self._current_view = ShowExpensesView(
             self._root,
             handle_add_expense=self._show_add_expense_view,
+            handle_logout=self._handle_logout,
+            handle_update_expense=self._show_update_expense_view
+        )
+        self._current_view.pack()
+
+    def _show_update_expense_view(self, expense):
+        self._hide_current_view()
+
+        self._current_view = UpdateExpenseView(
+            self._root,
+            expense=expense,
+            handle_update_expense=self._handle_update_expense,
+            handle_back_to_expenses=self._show_expenses_view,
             handle_logout=self._handle_logout
         )
         self._current_view.pack()
+
+    def _handle_update_expense(self, expense_id, description, amount, date):
+        try:
+            expense_service.update_expense(expense_id, description, amount, date)
+            self._show_expenses_view()
+        except Exception as e:
+            if self._current_view and isinstance(self._current_view, UpdateExpenseView):
+                self._current_view._show_error(str(e))
 
     def _handle_logout(self):
         user_service.logout()

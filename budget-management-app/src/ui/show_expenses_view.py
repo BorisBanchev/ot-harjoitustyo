@@ -4,11 +4,12 @@ from services.user_service import user_service
 
 
 class ShowExpensesView:
-    def __init__(self, root, handle_add_expense, handle_logout):
+    def __init__(self, root, handle_add_expense, handle_logout, handle_update_expense):
         self._root = root
         self._frame = ttk.Frame(master=self._root)
         self._handle_add_expense = handle_add_expense
         self._handle_logout = handle_logout
+        self._handle_update_expense = handle_update_expense
         self._selected_expense_id = None
         self._budget_label = None
         self._initialize()
@@ -25,7 +26,16 @@ class ShowExpensesView:
             self._refresh_expenses()
 
     def _update_expense_handler(self):
-        pass
+        if not self._selected_expense_id:
+            return
+
+        expenses = expense_repository.get_expenses_by_user(user_service._user.username)
+        selected_expense = next(
+            (expense for expense in expenses if expense.expense_id == int(self._selected_expense_id)),
+            None
+        )
+        if selected_expense:
+            self._handle_update_expense(selected_expense)
 
     def _on_expense_select(self, event):
         selected_expense = self._tree.selection()
@@ -92,7 +102,7 @@ class ShowExpensesView:
     def _initialize(self):
         self._initialize_budget_field()
         self._initialize_expenses_table()
-
+        
         delete_button = ttk.Button(
             master=self._frame,
             text="Delete Expense",
@@ -108,6 +118,13 @@ class ShowExpensesView:
         )
         add_expense_button.grid(row=2, column=2, padx=5,
                                 pady=5, sticky=constants.EW)
+        
+        update_button = ttk.Button(
+            master=self._frame,
+            text="Update Expense",
+            command=self._update_expense_handler
+        )
+        update_button.grid(row=2, column=1, padx=5, pady=5, sticky=constants.EW)
 
         logout_button = ttk.Button(
             master=self._frame,
