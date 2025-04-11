@@ -61,18 +61,33 @@ class ShowExpensesView:
                                 pady=5, sticky=constants.W)
 
     def _initialize_expenses_table(self):
+        table_frame = ttk.Frame(master=self._frame)
+        table_frame.grid(row=1, column=0, columnspan=3, padx=5, pady=5, sticky=constants.EW)
+
         self._tree = ttk.Treeview(
-            master=self._frame,
+            master=table_frame,
             columns=("id", "description", "amount", "date"),
-            show="headings"
+            show="headings",
+            selectmode="browse"
         )
         self._tree.heading("id", text="ID")
         self._tree.heading("description", text="Description")
         self._tree.heading("amount", text="Amount")
         self._tree.heading("date", text="Date")
         self._tree.bind("<<TreeviewSelect>>", self._on_expense_select)
-        self._tree.grid(row=1, column=0, columnspan=3,
-                        padx=5, pady=5, sticky=constants.EW)
+
+        scrollbar = ttk.Scrollbar(
+            master=table_frame,
+            orient="vertical",
+            command=self._tree.yview
+        )
+        self._tree.configure(yscrollcommand=scrollbar.set)
+
+        self._tree.grid(row=0, column=0, sticky=constants.NSEW)
+        scrollbar.grid(row=0, column=1, sticky=constants.NS)
+
+        table_frame.grid_columnconfigure(0, weight=1)
+        table_frame.grid_rowconfigure(0, weight=1)
 
     def _initialize(self):
         self._initialize_budget_field()
@@ -102,3 +117,7 @@ class ShowExpensesView:
         logout_button.grid(row=3, column=0, padx=5, pady=5, sticky=constants.EW)
 
         self._refresh_expenses()
+
+        self._frame.grid_columnconfigure(0, weight=1)
+        self._frame.grid_columnconfigure(1, weight=1)
+        self._frame.grid_columnconfigure(2, weight=1)

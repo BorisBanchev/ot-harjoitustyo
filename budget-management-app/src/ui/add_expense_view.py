@@ -181,4 +181,7 @@ class AddExpenseView:
         )
         self._error_label.grid(row=9, column=0, padx=5, pady=5)
         self._hide_error()
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
+        
+        self._frame.grid_columnconfigure(0, weight=1)
+        self._frame.grid_columnconfigure(1, weight=1)
+

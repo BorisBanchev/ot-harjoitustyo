@@ -26,7 +26,7 @@ Sovelluksessa on käytössä vain yksi käyttäjärooli eli ei ole admin käytt�
 - Käyttäjä voi mennä kulujen näkymään painamalla nappia "show expenses" **"Tehty"**
 - Käyttäjä voi poistaa omia kulujaan painamalla nappia "Delete Expense" **"Tehty"**, muokata niitä klikkaamalla haluttua kulua ja painamalla "Update Expense"
 - Budjetti päivittyy muutosten yhteydessä **"Tehty"**
-- Käyttäjä voi kirjautua ulos sovelluksesta
+- Käyttäjä voi kirjautua ulos sovelluksesta **"Tehty"**
 
 ## Jatkokehitysideoita
 
