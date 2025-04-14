@@ -11,4 +11,4 @@
 | 5.4.  |  2   | Dokumentaation parantelua, ohjelman arkkitehtuurin pakkauskaavio|
 | 10.4. |  1   | Uloskirjautumisen toteutus                                                         |
 | 11.4. |  4   | Kulun muokkaustoiminnallisuuden toteutus                                           |
-| yht.  | 21,5 |
+| yht.  | 23,5 |
