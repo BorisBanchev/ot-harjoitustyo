@@ -8,7 +8,7 @@
 | 31.3. | 2,5  | Testitietokannan muodostaminen ja Tkinter dokumentoinnin lukemista                 |
 | 1.4.  |  4   | Käyttäjän kirjautumistoiminnallisuutta, UI sivujen muodostamista                   |
 | 3.4.  |  4   | Kulujen lisäämisen sekä näyttämisen näkymän työstämistä ja tämän logiikan toteutus |
-| 5.4.  |  2   | Dokumentaation parantelua, ohjelman arkkitehtuurin pakkauskaavio|
+| 5.4.  |  2   | Dokumentaation parantelua, ohjelman arkkitehtuurin pakkauskaavio                   |
 | 10.4. |  1   | Uloskirjautumisen toteutus                                                         |
 | 11.4. |  4   | Kulun muokkaustoiminnallisuuden toteutus                                           |
 | yht.  | 23,5 |
