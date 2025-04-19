@@ -25,3 +25,8 @@
 - Lisätty näkymä update_expense_view, jossa käyttäjä voi muokata kulun kenttiä amount, description tai date
 - Käyttäjä voi scrollata kuluja taulukossa, jos niitä on paljon
 - Testattu UserService luokan logout funktiota ja ExpenseRepositoryn update_expense funktiota
+
+## Viikko 6
+
+- Käyttäjä näkee nyt show_expenses_view kulut näiden summan mukaisessa järjestyksessä
+- Testattu ExpenseServicen luokan funktioita add_expense ja update_expense TestExpenseService-luokalla

@@ -9,6 +9,8 @@ from repositories.expense_repository import expense_repository
 class TestUserService(unittest.TestCase):
     def setUp(self):
         user_repository.delete_all_users()
+        expense_repository.delete_all_expenses()
+        user_service.logout()
         self.valid_user = User("Paavo", "1234")
         self.invalid_user = User("Moi", "123")
         self.expense = Expense("car", 2000, "2025-04-08")

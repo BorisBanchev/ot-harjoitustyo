@@ -32,7 +32,7 @@ Sovelluksessa on käytössä vain yksi käyttäjärooli eli ei ole admin käytt�
 
 Perusversion jälkeen voidaan ajan salliessa seuraavia ominaisuuksia sovellukseen:
 
-- Kulujen järjestäminen summan mukaisesti tärkeysjärjestykseen
+- Kulujen järjestäminen summan mukaisesti tärkeysjärjestykseen **"Tehty"**
 - Admin käyttäjä, joka voi valita käyttäjän ja näkee hänen kaikki kulut listattuna
 - Admin käyttäjä voi muokata muiden käyttäjien budjettia
 - Kuluihin kenttä, joka sisältää tarkemman kuvauksen kuluun liittyen
