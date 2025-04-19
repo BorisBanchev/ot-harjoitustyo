@@ -13,5 +13,5 @@
 | 11.4. |  4   | Kulun muokkaustoiminnallisuuden toteutus                                                     |
 | 14.4. | 1,5  | Sekvenssikaavion lisäys kirjautumistoiminnallisuudesta                                       |
 | 15.4. | 0,5  | Pakkauskaavion korjaus, UI:sta riippuvuus nuoli ExpenseRepositoryyn                          |
-| 19.4. |  4   | Päivitys käyttöliittymän show_expenses_view näkymään, dokumentaation parantelu, testien teko |
-| yht.  | 25,5 |
+| 19.4. |  3   | Päivitys käyttöliittymän show_expenses_view näkymään, dokumentaation parantelu, testien teko |
+| yht.  | 28,5 |
