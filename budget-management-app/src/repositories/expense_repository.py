@@ -65,6 +65,12 @@ class ExpenseRepository:
         self._db.commit()
 
     def delete_expense(self, expense_id: int):
+        ''' Funktio, joka poistaa tietokannasta käyttäjän kulun
+
+        Args:
+            expense_id: Kokonaislukuarvo, joka kertoo kulun id:n
+        
+        '''
         cursor = self._db.cursor()
         cursor.execute('''
             DELETE FROM expenses WHERE id = ?
@@ -72,6 +78,7 @@ class ExpenseRepository:
         self._db.commit()
 
     def delete_all_expenses(self):
+        ''' Funktio, joka poistaa kaikki kulut tietokannasta (käytetään testeissä)'''
         cursor = self._db.cursor()
         cursor.execute("DELETE FROM expenses")
         self._db.commit()

@@ -25,11 +25,23 @@ class InvalidCredentialsError(Exception):
 
 
 class UserService:
+    '''Käyttäjiin liittyvästä sovelluslogiikasta huolehtiva luokka'''
     def __init__(self, repository):
+        '''Luokan konstruktori, joka luo uuden käyttäjiin liittyvän sovelluslogiikan palvelun
+
+            Args:
+                repository: Olio, jolla on UserRepository-luokkaa vastaavat metodit
+        '''
         self._user = None
         self._user_repository = repository
 
     def set_budget(self, username, budget):
+        ''' Asettaa käyttälle uuden budjetin
+
+            Args:
+                username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta
+                budget: Desimaaliarvo, joka kuvaa käyttäjän kuukausibudjettia
+        '''
         try:
             monthly_budget = float(budget)
         except ValueError as exc:
@@ -42,6 +54,11 @@ class UserService:
         self._user.monthly_budget = monthly_budget
 
     def get_current_budget(self):
+        ''' Funktio, joka palauttaa käyttäjän nykyisen budjetin
+
+        Returns:
+            Palauttaa käyttäjän nykyisen budjetin
+        '''
         if self._user.monthly_budget is None:
             return None
         expenses = expense_repository.get_expenses_by_user(self._user.username)
@@ -49,7 +66,16 @@ class UserService:
         return round(self._user.monthly_budget - total_expenses,2)
 
     def create_user(self, username: str, password: str, password_confirm: str):
+        ''' Funktio, joka luo uuden käyttäjän
 
+        Args: 
+            username: Merkkijonoarvo, kuvaa käyttäjän käyttäjätunnusta ohjelmaan
+            password: Merkkijonoarvo, kuvaa käyttäjän salasanaa ohjelmaan
+            password_confirm: Merkkijonoarvo, kuvaa käyttäjän salasanaa ohjelmaan
+        
+        Returns:
+            Palauttaa User-olion
+        '''
         existing_user = self._user_repository.get_user_by_name(username)
 
         if len(username) == 0 or len(password) == 0:
@@ -68,6 +94,15 @@ class UserService:
         return user
 
     def login(self, username: str, password: str):
+        ''' Funktio, joka huolehtii käyttäjän kirjautumisesta
+
+        Args: 
+            username: Merkkijonoarvo, kuvaa käyttäjän käyttäjätunnusta ohjelmaan
+            password: Merkkijonoarvo, kuvaa käyttäjän salasanaa ohjelmaan
+        
+        Returns:
+            Palauttaa User-olion
+        '''
         user = self._user_repository.get_user_by_name(username)
 
         if not user or not bcrypt.checkpw(password.encode("utf-8"), user.password.encode("utf-8")):
@@ -77,6 +112,7 @@ class UserService:
         return user
 
     def logout(self):
+        '''Funktio, joka huolehtii käyttäjän uloskirjautumisesta järjestelmästä'''
         self._user = None
 
 
