@@ -9,3 +9,4 @@ htmlcov
 *$py.class
 data/database.sqlite
 data/test-database.sqlite
+.DS_Store
