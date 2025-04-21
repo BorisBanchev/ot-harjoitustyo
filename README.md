@@ -12,6 +12,7 @@ Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä 
 - [työaikakirjanpito](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/tyoaikakirjanpito.md)
 - [changelog](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/changelog.md)
 - [arkkitehtuuri](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/arkkitehtuuri.md)
+- [käyttöohje](https://github.com/BorisBanchev/ot-harjoitustyo/blob/main/budget-management-app/dokumentaatio/kayttoohje.md)
 
 ## Asennus
 
