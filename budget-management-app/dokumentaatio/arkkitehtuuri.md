@@ -71,3 +71,25 @@ sequenceDiagram
   UserService-->>UI: user
   UI->UI: _show_add_expense_view()
 ```
+
+### Uuden käyttäjän luominen
+
+Uuden käyttäjäluomis näkymässä, kun käyttäjä täyttää käyttäjätunnuksen ja salasanan tiedot, painamalla "Create User" nappia uuden käyttäjän luominen etenee sekvenssikaavion mukaisesti näin:
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant UI
+    participant UserService
+    participant UserRepository
+    participant Ville
+    User->>UI: click "Create User" button
+    UI->>UserService: create_user("Ville", "1234", "1234")
+    UserService->>UserRepository: get_user_by_name("Ville")
+    UserRepository-->>UserService: None
+    UserService->>UserRepository: create_user(User("Ville","1234"))
+    UserRepository->>Ville: User("Ville","1234")
+    UserRepository-->>UserService: User
+    UserService-->>UI: User
+    UI->>UI: show_add_expense_view()
+```
