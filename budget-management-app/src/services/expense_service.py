@@ -38,6 +38,11 @@ class ExpenseService:
 
         expense_repository.update_expense(
             expense_id, description, amount, date)
-
+    
+    def delete_expense(self, expense_id):
+        expense_repository.delete_expense(expense_id)
+    
+    def get_expenses_by_user(self, username):
+        return expense_repository.get_expenses_by_user(username)
 
 expense_service = ExpenseService(expense_repository)

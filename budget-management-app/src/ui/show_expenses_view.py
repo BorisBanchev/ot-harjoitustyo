@@ -1,5 +1,5 @@
 from tkinter import ttk, constants, StringVar
-from repositories.expense_repository import expense_repository
+from services.expense_service import expense_service
 from services.user_service import user_service
 
 
@@ -22,14 +22,14 @@ class ShowExpensesView:
 
     def _delete_expense_handler(self):
         if self._selected_expense_id:
-            expense_repository.delete_expense(self._selected_expense_id)
+            expense_service.delete_expense(self._selected_expense_id)
             self._refresh_expenses()
 
     def _update_expense_handler(self):
         if not self._selected_expense_id:
             return
 
-        expenses = expense_repository.get_expenses_by_user(
+        expenses = expense_service.get_expenses_by_user(
             user_service._user.username)
         selected_expense = next(
             (expense for expense in expenses if expense.expense_id ==
@@ -58,7 +58,7 @@ class ShowExpensesView:
         for row in self._tree.get_children():
             self._tree.delete(row)
 
-        expenses = expense_repository.get_expenses_by_user(
+        expenses = expense_service.get_expenses_by_user(
             user_service._user.username)
         sorted_expenses = sorted(expenses, key=lambda expense: expense.amount, reverse=True)
         for expense in sorted_expenses:
