@@ -4,7 +4,8 @@
 
 Projekti kirjoitetaan _python-kielellä_ ja se tulee käyttämään _tietokantana_ **SQLite**. Riippuvuuksien hallintana käytetään **Poetryä**.
 Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä kulujaan.
-## Viimeinen Release
+## Viimeiset Releaset
+- [viikko6](https://github.com/BorisBanchev/ot-harjoitustyo/releases/tag/Viikko6)
 - [viikko5](https://github.com/BorisBanchev/ot-harjoitustyo/releases/tag/Viikko5)
 ## Dokumentaatio
 
