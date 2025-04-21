@@ -32,3 +32,4 @@
 - Testattu ExpenseServicen luokan funktioita add_expense ja update_expense TestExpenseService-luokalla
 - Korjattu Käyttäjän kuukausibudjetti toimimaan desimaaliarvoilla
 - Lisätty sekvenssikaavio uuden käyttäjän luomisesta
+- Lisätty käyttöohje sovellusta varten dokumentaatioon

@@ -14,5 +14,5 @@
 | 14.4. |  1,5   | Sekvenssikaavion lisäys kirjautumistoiminnallisuudesta                                       |
 | 15.4. |  0,5   | Pakkauskaavion korjaus, UI:sta riippuvuus nuoli ExpenseRepositoryyn                          |
 | 19.4. |   3    | Päivitys käyttöliittymän show_expenses_view näkymään, dokumentaation parantelu, testien teko |
-| 21.4. |   3    | korjattu kuukausibudjetti desimaaliarvoksi, dokumentoinnin parantelua                        |
-| yht.  | 31,5 h |
+| 21.4. |   4    | korjattu kuukausibudjetti desimaaliarvoksi, dokumentoinnin parantelua                        |
+| yht.  | 32,5 h |

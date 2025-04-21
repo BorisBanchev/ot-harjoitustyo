@@ -8,6 +8,7 @@ class ExpenseRepository:
     Attributes:
         db: Polku tiedostoon, johon kulut tallennetaan
     '''
+
     def __init__(self, db):
         ''' Luokan konstruktori
 
@@ -35,7 +36,7 @@ class ExpenseRepository:
 
         Args: 
             username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta
-        
+
         Returns:
             Palauttaa listan Expense-olioita eli käyttäjän kulut
         '''
@@ -54,7 +55,7 @@ class ExpenseRepository:
             description: Merkkijonoarvo, joka on kuvaus kulusta
             amount: Desimaaliarvo, joka määrittelee kulun summan arvon
             date: Merkkijonoarvo, joka määrittelee kulun päivämäärän
-        
+
         '''
         cursor = self._db.cursor()
         cursor.execute('''
@@ -69,7 +70,7 @@ class ExpenseRepository:
 
         Args:
             expense_id: Kokonaislukuarvo, joka kertoo kulun id:n
-        
+
         '''
         cursor = self._db.cursor()
         cursor.execute('''

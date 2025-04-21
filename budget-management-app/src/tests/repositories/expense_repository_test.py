@@ -45,7 +45,7 @@ class TestExpenseRepository(unittest.TestCase):
         user_by_name = user_repository.get_user_by_name("paavo")
         username = user_by_name.username
         expense_repository.create_expense(self.expense, username)
-        
+
         expenses = expense_repository.get_expenses_by_user(username)
         expense_before_updating = expenses[0]
 
@@ -53,11 +53,11 @@ class TestExpenseRepository(unittest.TestCase):
         self.assertEqual(expense_before_updating.amount, 2000)
         self.assertEqual(expense_before_updating.date, "2025-04-08")
 
-        expense_repository.update_expense(expense_before_updating.expense_id, "bed", 1000, "2025-04-09")
+        expense_repository.update_expense(
+            expense_before_updating.expense_id, "bed", 1000, "2025-04-09")
 
         updated_expense = expense_repository.get_expenses_by_user(username)[0]
 
         self.assertEqual(updated_expense.description, "bed")
         self.assertEqual(updated_expense.amount, 1000)
         self.assertEqual(updated_expense.date, "2025-04-09")
-        

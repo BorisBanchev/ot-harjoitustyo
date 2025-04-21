@@ -9,6 +9,7 @@ class UserRepository:
     Attributes:
         db: Polku tiedostoon, johon kulut tallennetaan
     '''
+
     def __init__(self, db):
         ''' Luokan konstruktori
 
@@ -19,7 +20,7 @@ class UserRepository:
 
     def get_all_users(self):
         ''' Funktio, joka hakee tietokannasta käyttäjät ja palauttaa ne listana User-olioita
-        
+
         Returns:
             Palauttaa listan User-olioita eli kaikki käyttäjät
         '''
@@ -34,7 +35,7 @@ class UserRepository:
 
         Args: 
             username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta
-        
+
         Returns:
             Palauttaa yksittäisen User-olion eli käyttäjän
         '''
@@ -51,7 +52,7 @@ class UserRepository:
 
         Args: 
             user: User-olio, joka kuvaa käyttäjää järjestelmässä
-        
+
         Returns:
             Palauttaa User-olion
         '''

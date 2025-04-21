@@ -26,6 +26,7 @@ class InvalidCredentialsError(Exception):
 
 class UserService:
     '''Käyttäjiin liittyvästä sovelluslogiikasta huolehtiva luokka'''
+
     def __init__(self, repository):
         '''Luokan konstruktori, joka luo uuden käyttäjiin liittyvän sovelluslogiikan palvelun
 
@@ -63,7 +64,7 @@ class UserService:
             return None
         expenses = expense_repository.get_expenses_by_user(self._user.username)
         total_expenses = sum(expense.amount for expense in expenses)
-        return round(self._user.monthly_budget - total_expenses,2)
+        return round(self._user.monthly_budget - total_expenses, 2)
 
     def create_user(self, username: str, password: str, password_confirm: str):
         ''' Funktio, joka luo uuden käyttäjän
@@ -72,7 +73,7 @@ class UserService:
             username: Merkkijonoarvo, kuvaa käyttäjän käyttäjätunnusta ohjelmaan
             password: Merkkijonoarvo, kuvaa käyttäjän salasanaa ohjelmaan
             password_confirm: Merkkijonoarvo, kuvaa käyttäjän salasanaa ohjelmaan
-        
+
         Returns:
             Palauttaa User-olion
         '''
@@ -99,7 +100,7 @@ class UserService:
         Args: 
             username: Merkkijonoarvo, kuvaa käyttäjän käyttäjätunnusta ohjelmaan
             password: Merkkijonoarvo, kuvaa käyttäjän salasanaa ohjelmaan
-        
+
         Returns:
             Palauttaa User-olion
         '''

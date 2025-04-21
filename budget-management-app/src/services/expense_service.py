@@ -8,6 +8,7 @@ class InvalidExpenseError(Exception):
 
 class ExpenseService:
     ''' Luokka, joka huolehtii kuluihin liittyvästä sovelluslogiikasta'''
+
     def __init__(self, expense_repository):
         '''Luokan konstruktori, joka luo uuden kuluihin liittyvän sovelluslogiikan palvelun
 
@@ -31,7 +32,8 @@ class ExpenseService:
         try:
             amount = float(amount)
         except ValueError as exc:
-            raise InvalidExpenseError("Amount must be a valid number!") from exc
+            raise InvalidExpenseError(
+                "Amount must be a valid number!") from exc
 
         if amount <= 0:
             raise InvalidExpenseError("Amount must be greater than zero!")
@@ -54,26 +56,28 @@ class ExpenseService:
         try:
             amount = float(amount)
         except ValueError as exc:
-            raise InvalidExpenseError("Amount must be a valid number!") from exc
+            raise InvalidExpenseError(
+                "Amount must be a valid number!") from exc
         if amount <= 0:
             raise InvalidExpenseError("Amount must be greater than zero!")
 
         expense_repository.update_expense(
             expense_id, description, amount, date)
-    
+
     def delete_expense(self, expense_id):
         ''' Funktio, joka poistaa olemassaolevan kulun'''
         expense_repository.delete_expense(expense_id)
-    
+
     def get_expenses_by_user(self, username):
         ''' Funktio, joka palauttaa käyttäjän kulut listana Expense-olioita
 
             Args:
                 username: Merkkijonoarvo, joka kuvaa käyttäjän tunnusta
-            
+
             Returns:
                 palauttaa listan käyttäjän kuluista Expense-olioina
         '''
         return expense_repository.get_expenses_by_user(username)
+
 
 expense_service = ExpenseService(expense_repository)

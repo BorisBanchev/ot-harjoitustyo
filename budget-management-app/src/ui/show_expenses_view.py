@@ -60,11 +60,11 @@ class ShowExpensesView:
 
         expenses = expense_service.get_expenses_by_user(
             user_service._user.username)
-        sorted_expenses = sorted(expenses, key=lambda expense: expense.amount, reverse=True)
+        sorted_expenses = sorted(
+            expenses, key=lambda expense: expense.amount, reverse=True)
         for expense in sorted_expenses:
             self._tree.insert("", "end", values=(
                 expense.expense_id, expense.description, expense.amount, expense.date))
-            
 
         self._refresh_budget()
 
