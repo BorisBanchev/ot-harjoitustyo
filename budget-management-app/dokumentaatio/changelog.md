@@ -30,3 +30,4 @@
 
 - Käyttäjä näkee nyt show_expenses_view kulut näiden summan mukaisessa järjestyksessä
 - Testattu ExpenseServicen luokan funktioita add_expense ja update_expense TestExpenseService-luokalla
+- Korjattu Käyttäjän kuukausibudjetti toimimaan desimaaliarvoilla
