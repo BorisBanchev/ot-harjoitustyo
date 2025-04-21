@@ -91,8 +91,8 @@ class TestUserService(unittest.TestCase):
         user = user_service.login(
             self.valid_user.username, self.valid_user.password)
 
-        user_service.set_budget(user.username, 3000)
-        self.assertEqual(user_service._user.monthly_budget, 3000)
+        user_service.set_budget(user.username, 3000.50)
+        self.assertEqual(user_service._user.monthly_budget, 3000.50)
 
     def test_set_budget_fails_with_negative_or_zero_budget(self):
         user_service.create_user(

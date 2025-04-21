@@ -31,7 +31,7 @@ class UserService:
 
     def set_budget(self, username, budget):
         try:
-            monthly_budget = int(budget)
+            monthly_budget = float(budget)
         except ValueError as exc:
             raise ValueError("Budget must be a valid number!") from exc
 
@@ -46,7 +46,7 @@ class UserService:
             return None
         expenses = expense_repository.get_expenses_by_user(self._user.username)
         total_expenses = sum(expense.amount for expense in expenses)
-        return self._user.monthly_budget - total_expenses
+        return round(self._user.monthly_budget - total_expenses,2)
 
     def create_user(self, username: str, password: str, password_confirm: str):
 

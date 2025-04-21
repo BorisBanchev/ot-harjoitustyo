@@ -52,7 +52,7 @@ class ShowExpensesView:
         else:
             current_budget = user_service.get_current_budget()
             self._budget_label.config(
-                text=f"Current Budget: {current_budget}€", foreground="green")
+                text=f"Current Budget: {current_budget:.2f}€", foreground="green")
 
     def _refresh_expenses(self):
         for row in self._tree.get_children():

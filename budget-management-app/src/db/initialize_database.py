@@ -22,7 +22,7 @@ def create_tables(connection):
         CREATE TABLE users (
             username TEXT PRIMARY KEY,
             password TEXT NOT NULL,
-            monthly_budget INTEGER
+            monthly_budget REAL
         );
     ''')
 
