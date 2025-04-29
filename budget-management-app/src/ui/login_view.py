@@ -2,7 +2,19 @@ from tkinter import ttk, constants, StringVar
 
 
 class LoginView:
+    '''Käyttäjien kirjautumisesta vastaava näkymä'''
+
     def __init__(self, root, handle_login, handle_show_create_user):
+        ''' Luokan konstruktori, joka luo uuden kirjautumisnäkymän
+        Args:
+            root:
+                TKinter-elementti, jonka sisään näkymä alustetaan
+            handle_login:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä kirjautuu sisään
+            handle_show_create_user:
+                Kutsuttava-funktio, jota kutsutaan kun siirrytään rekisteröitymisnäkymään
+
+        '''
         self._root = root
         self._handle_login = handle_login
         self._handle_show_create_user = handle_show_create_user
@@ -15,9 +27,11 @@ class LoginView:
         self._initialize()
 
     def pack(self):
+        '''Näyttää näkymän'''
         self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        '''Tuhoaa näkymän'''
         self._frame.destroy()
 
     def _initialize_username_field(self):

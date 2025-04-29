@@ -3,7 +3,25 @@ from services.expense_service import InvalidExpenseError, expense_service
 
 
 class UpdateExpenseView:
+    '''Kulun muokkaamisesta vastaava näkymä'''
+
     def __init__(self, root, expense, handle_update_expense, handle_back_to_expenses, handle_logout):
+        ''' Luokan konstruktori, joka luo uuden kulun muokkausnäkymän
+        Args:
+            root:
+                TKinter-elementti, jonka sisään näkymä alustetaan
+            expense:
+                Expense-olio, joka kuvaa muokattavaa kulua
+            handle_update_expense:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä painaa update expense-nappia. Hänet ohjataan takaisin
+                show_expenses_view-näkymään
+            handle_back_to_expenses:
+                Kutsuttava-funktio, jota kutsutaan, kun käyttäjä painaa nappia back to expenses, ohjataan takaisin
+                show_expenses_view-näkymään
+            handle_logout:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä kirjautuu ulos ja hänet ohjataa login-näkymään
+
+        '''
         self._root = root
         self._expense = expense
         self._handle_update_expense = handle_update_expense
@@ -18,9 +36,11 @@ class UpdateExpenseView:
         self._initialize()
 
     def pack(self):
+        '''Näyttää näkymän'''
         self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        '''Tuhoaa näkymän'''
         self._frame.destroy()
 
     def _show_error(self, message):
@@ -69,7 +89,6 @@ class UpdateExpenseView:
         amount_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
         self._amount_entry.grid(row=2, column=1, padx=5,
                                 pady=5, sticky=constants.EW)
-
 
     def _initialize_date_entry(self):
         date_label = ttk.Label(master=self._frame, text="Date")

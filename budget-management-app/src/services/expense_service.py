@@ -2,6 +2,7 @@ from entities.expense import Expense
 from repositories.expense_repository import expense_repository
 from datetime import datetime, timedelta
 
+
 class InvalidExpenseError(Exception):
     pass
 
@@ -30,7 +31,7 @@ class ExpenseService:
             raise InvalidExpenseError("All fields are required!")
 
         try:
-            amount = round(float(amount),2)
+            amount = round(float(amount), 2)
         except ValueError as exc:
             raise InvalidExpenseError(
                 "Amount must be a valid number!") from exc
@@ -54,7 +55,7 @@ class ExpenseService:
             raise InvalidExpenseError("All fields are required!")
 
         try:
-            amount = round(float(amount),2)
+            amount = round(float(amount), 2)
         except ValueError as exc:
             raise InvalidExpenseError(
                 "Amount must be a valid number!") from exc
@@ -85,5 +86,6 @@ class ExpenseService:
         last_day_of_month = (today.replace(
             day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
         return [(today + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((last_day_of_month - today).days + 1)]
+
 
 expense_service = ExpenseService(expense_repository)

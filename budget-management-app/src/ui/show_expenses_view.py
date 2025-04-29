@@ -1,10 +1,26 @@
-from tkinter import ttk, constants, StringVar
+from tkinter import ttk, constants
 from services.expense_service import expense_service
 from services.user_service import user_service
 
 
 class ShowExpensesView:
+    '''Kulujen näyttämisestä vastaava näkymä'''
+
     def __init__(self, root, handle_add_expense, handle_logout, handle_update_expense):
+        ''' Luokan konstruktori, joka luo uuden kulujen näyttämisnäkymän
+        Args:
+            root:
+                TKinter-elementti, jonka sisään näkymä alustetaan
+            handle_add_expense:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä painaa add expense-nappia ja 
+                hänet ohjataa kulun lisäys näkymään
+            handle_logout:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä kirjautuu ulos ja hänet ohjataa login-näkymään
+            handle_update_expense:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä valitsee muokkaa kulua, ja hänet ohjataa kulun muokkaus
+                näkymään
+
+        '''
         self._root = root
         self._frame = ttk.Frame(master=self._root)
         self._handle_add_expense = handle_add_expense
@@ -15,9 +31,11 @@ class ShowExpensesView:
         self._initialize()
 
     def pack(self):
+        '''Näyttää näkymän'''
         self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        '''Tuhoaa näkymän'''
         self._frame.destroy()
 
     def _delete_expense_handler(self):

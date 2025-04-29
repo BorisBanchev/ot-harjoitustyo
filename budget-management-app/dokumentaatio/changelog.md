@@ -33,3 +33,6 @@
 - Korjattu Käyttäjän kuukausibudjetti toimimaan desimaaliarvoilla
 - Lisätty sekvenssikaavio uuden käyttäjän luomisesta
 - Lisätty käyttöohje sovellusta varten dokumentaatioon
+- Lisätty docstringit lähes kaikille funktioille ja luokille
+- korjattu arkkitehtuurikaavion tiedostoformaatti png:stä jpg:hen, niin se näkyy myös dark-modessa
+- refaktoroitu get_available_dates-funktio expense-serviceen, jota importataan sieltä UI-tiedostoissa.

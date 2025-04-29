@@ -2,8 +2,22 @@ from tkinter import ttk, constants, StringVar
 from services.user_service import user_service
 from services.expense_service import InvalidExpenseError, expense_service
 
+
 class AddExpenseView:
+    '''Kulujen lisäämisestä vastaava näkymä'''
+
     def __init__(self, root, handle_expense_adding, handle_show_expenses, handle_logout):
+        ''' Luokan konstruktori, joka luo uuden kulunlisäysnäkymän
+        Args:
+            root:
+                TKinter-elementti, jonka sisään näkymä alustetaan
+            handle_expense_adding:
+                Kutsuttava-funktio, jota kutsutaan, kun käyttäjä luo uuden kulun
+            handle_show_expenses:
+                Kutsuttava-funktio, joka ohjaa käyttäjän listattujen kulujen näkymään
+            handle_logout:
+                Kutsuttava-funktio, jota kutsutaan kun käyttäjä kirjautuu ulos, tämän jälkeen siirrytään login-näkymään.
+        '''
         self._root = root
         self._frame = None
         self._handle_expense_adding = handle_expense_adding
@@ -18,9 +32,11 @@ class AddExpenseView:
         self._initialiaze()
 
     def pack(self):
+        '''Näyttää näkymän'''
         self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        '''Tuhoaa näkymän'''
         self._frame.destroy()
 
     def _set_budget_handler(self):
@@ -80,8 +96,6 @@ class AddExpenseView:
 
     def _hide_error(self):
         self._error_label.grid_remove()
-
-    
 
     def _initialiaze_description(self):
         description_label = ttk.Label(
