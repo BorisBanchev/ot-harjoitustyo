@@ -1,10 +1,6 @@
 from tkinter import ttk, constants, StringVar
-from datetime import datetime, timedelta
 from services.user_service import user_service
-from repositories.expense_repository import expense_repository
-from entities.expense import Expense
-from services.expense_service import InvalidExpenseError
-
+from services.expense_service import InvalidExpenseError, expense_service
 
 class AddExpenseView:
     def __init__(self, root, handle_expense_adding, handle_show_expenses, handle_logout):
@@ -85,12 +81,7 @@ class AddExpenseView:
     def _hide_error(self):
         self._error_label.grid_remove()
 
-    def _get_available_dates(self):
-        # Generate a list of dates from current day to the end of the month
-        today = datetime.now()
-        last_day_of_month = (today.replace(
-            day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
-        return [(today + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((last_day_of_month - today).days + 1)]
+    
 
     def _initialiaze_description(self):
         description_label = ttk.Label(
@@ -112,7 +103,7 @@ class AddExpenseView:
         date_label = ttk.Label(master=self._frame, text="Date")
         date_label.grid(row=5, column=0, padx=5, pady=5, sticky=constants.W)
 
-        available_dates = self._get_available_dates()
+        available_dates = expense_service.get_available_dates()
         self._expense_date_combobox = ttk.Combobox(
             master=self._frame, values=available_dates, state="readonly")
         self._expense_date_combobox.grid(

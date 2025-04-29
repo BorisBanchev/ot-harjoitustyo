@@ -1,6 +1,5 @@
-from datetime import datetime, timedelta
 from tkinter import ttk, constants, StringVar
-from services.expense_service import InvalidExpenseError
+from services.expense_service import InvalidExpenseError, expense_service
 
 
 class UpdateExpenseView:
@@ -71,15 +70,10 @@ class UpdateExpenseView:
         self._amount_entry.grid(row=2, column=1, padx=5,
                                 pady=5, sticky=constants.EW)
 
-    def _get_available_dates(self):
-        today = datetime.now()
-        last_day_of_month = (today.replace(
-            day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
-        return [(today + timedelta(days=i)).strftime("%Y-%m-%d") for i in range((last_day_of_month - today).days + 1)]
 
     def _initialize_date_entry(self):
         date_label = ttk.Label(master=self._frame, text="Date")
-        available_dates = self._get_available_dates()
+        available_dates = expense_service.get_available_dates()
         self._date_combobox = ttk.Combobox(
             master=self._frame, values=available_dates, state="readonly")
         self._date_combobox.set(self._expense.date)
