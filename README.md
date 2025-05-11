@@ -7,6 +7,7 @@ Käyttäjät voivat kirjautuneena sovellukseen hallinnoida omia päivittäisiä 
 ## Viimeiset Releaset
 - [viikko6](https://github.com/BorisBanchev/ot-harjoitustyo/releases/tag/Viikko6)
 - [viikko5](https://github.com/BorisBanchev/ot-harjoitustyo/releases/tag/Viikko5)
+- -[loppu-release](https://github.com/BorisBanchev/ot-harjoitustyo/releases/tag/loppu-release)
 ## Dokumentaatio
 
 - [vaatimusmäärittely](https://github.com/BorisBanchev/ot-harjoitustyo/tree/main/budget-management-app/dokumentaatio/vaatimusmaarittely.md)
