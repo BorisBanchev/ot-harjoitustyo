@@ -8,7 +8,8 @@ class User:
         user_id:: Kokonaislukuarvo kuvaa käyttäjän id:tä
     '''
 
-    def __init__(self, username: str, password: str, monthly_budget: float = None, user_id: int = None):
+    def __init__(self, username: str, password: str, monthly_budget: float = None,
+                  user_id: int = None):
         ''' Luokan konstruktori luo uuden käyttäjän
 
         Args:

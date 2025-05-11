@@ -32,7 +32,8 @@ class ExpenseRepository:
         self._db.commit()
 
     def get_expenses_by_user(self, username: str):
-        ''' Funktio, joka hakee tietokannasta käyttäjän kulut ja palauttaa ne listana Expense-olioita
+        ''' Funktio, joka hakee tietokannasta käyttäjän kulut
+            ja palauttaa ne listana Expense-olioita
 
         Args: 
             username: Merkkijonoarvo, joka kuvaa käyttäjän käyttäjätunnusta

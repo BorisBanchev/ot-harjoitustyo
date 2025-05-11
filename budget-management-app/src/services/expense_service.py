@@ -1,6 +1,7 @@
+from datetime import datetime, timedelta
 from entities.expense import Expense
 from repositories.expense_repository import expense_repository
-from datetime import datetime, timedelta
+
 
 
 class InvalidExpenseError(Exception):

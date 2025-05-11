@@ -16,4 +16,5 @@
 | 19.4. |   3    | Päivitys käyttöliittymän show_expenses_view näkymään, dokumentaation parantelu, testien teko |
 | 21.4. |   4    | korjattu kuukausibudjetti desimaaliarvoksi, dokumentoinnin parantelua                        |
 | 29.4. |   4    | korjattu kuukausibudjetti desimaaliarvoksi, dokumentoinnin parantelua                        |
-| yht.  | 36,5 h |
+| 11.5. |   2    | Korjattu pylint-virheitä ja testausdokumentti lisätty                                        |
+| yht.  | 38,5 h |
